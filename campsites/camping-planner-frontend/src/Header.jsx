@@ -1,6 +1,36 @@
+import axios from "axios";
+import { useState } from "react";
+
+const jwt = localStorage.getItem("jwt");
+if (jwt) {
+  axios.defaults.headers.common["Authorization"] = `Bearer ${jwt}`;
+}
 import "./Header.css";
 
 export function Header() {
+
+  const [errors, setErrors] = useState([]);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setErrors([]);
+    const params = new FormData(event.target);
+    axios
+      .post("http://localhost:3000/sessions.json", params)
+      .then((response) => {
+        console.log(response.data);
+        axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.jwt;
+        localStorage.setItem("jwt", response.data.jwt);
+        event.target.reset();
+        window.location.href = "/"; // Change this to hide a modal, redirect to a specific page, etc.
+      })
+      .catch((error) => {
+        console.log(error.response);
+        setErrors(["Invalid email or password"]);
+      });
+  };
+
+
   return (
     <div className="content">
       <nav className="navbar navbar-expand-lg .bg-transparent">
@@ -14,14 +44,31 @@ export function Header() {
                 <a className="nav-link text-white" href="/nationalparks"><h3 className="navtext">PARK INDEX</h3></a>
               </li>
               <li className="nav-item">
-                <a className="nav-link text-white" href="#"><h3 className="navtext">MY PARKS</h3></a>
+                <a className="nav-link text-white" href="/myparks"><h3 className="navtext">MY PARKS</h3></a>
+              </li>
+              <li className="Signup">
+                <a className="nav-link text-white" href="/signup"><h3 className="navtext">SIGN UP</h3></a>
               </li>
             </ul>
-            <div className="Signup">
-              <a className="nav-link text-white" href="/signup"><h3 className="navtext">SIGN UP</h3></a>
-            </div>
-            <div className="Signup">
-              <a className="nav-link text-white" href="/login"><h3 className="navtext">SIGN IN</h3></a>
+            <div>
+            {errors.map((error) => (
+              <div key={error}>{error}</div>
+              ))}
+            <form onSubmit={handleSubmit}>
+              <div className="signinblock">
+                <div className="row">
+                  <div className="col">
+                    <input name="email" type="email" placeholder="Email"/>
+                  </div>
+                  <div className="col">
+                    <input name="password" type="password" placeholder="Password"/>
+                  </div >
+                  <div className="col">
+                    <button className="loginbutton" type="submit"><h3 className="navtext">SIGN IN</h3></button>
+                  </div>
+                </div>
+              </div>    
+            </form>
             </div>
           </div>
         </div>

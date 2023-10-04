@@ -1,18 +1,39 @@
-import { NationalParks } from './NationalParks';
-import { Route, Routes } from "react-router-dom";
-import "./Content.css";
-import { Signup } from './Signup';
-import { LogIn } from "./LogIn";
+import { useEffect, useState } from 'react';
+import './Content.css';
+
 
 export function Content() {
-  
+  const [coordinates, setCoordinates] = useState(null);
+
+  const errorCallback = (error) => {
+    console.error(error);
+  };
+
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+  }, []);
+
+  const successCallback = (position) => {
+    console.log(position);
+    setCoordinates(position.coords);
+  };
+
+  useEffect(() => {
+    if (coordinates) {
+      fetch(
+        `https://api.openweathermap.org/data/2.5/forecast?lat=${coordinates.latitude}&lon=${coordinates.longitude}&units=imperial&appid=2cc0ae3eaa888e74373141da8fac7442`
+      )
+        .then((res) => res.json())
+        .then((json) => {
+          const forecastList = json.list;
+          console.log(forecastList);
+        });
+    }
+  }, [coordinates]);
+
+
   return (
     <div className="content-page">
-      <Routes>
-        <Route path="/parks-list" element={<NationalParks />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/login" element={<LogIn />} />
-      </Routes>
       <div className="content">
         <div className="title">
           <h1>NATIONAL PARKS</h1>

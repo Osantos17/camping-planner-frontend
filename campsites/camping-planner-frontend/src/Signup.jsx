@@ -22,6 +22,7 @@ export function Signup() {
       });
   };
 
+
   return (
     <div className="signup-page">
       <div className='signup'>
@@ -34,20 +35,22 @@ export function Signup() {
           </ul>
           <form onSubmit={handleSubmit}>
             <div className="form-info">
-              <div>
-                <h6 className="form">Name:</h6><input name="name" type="text" />
-              </div>
-              <div>
-              <h6 className="form">Email:</h6><input name="email" type="email" />
-              </div>
-              <div>
-              <h6 className="form">Password:</h6><input name="password" type="password" />
-              </div>
-              <div>
-              <h6 className="form">Password Confirmation:</h6><input name="password_confirmation" type="password" />
-              </div>
-              <br/>
-              <button className="button" type="submit">Sign up</button>
+              <div className="form-text">
+                <div>
+                  <h6 className="form"></h6><input className="bar" name="name" type="text" placeholder="Name" />
+                </div>
+                <div>
+                  <h6 className="form"></h6><input className="bar" name="email" type="email" placeholder="Email"/>
+                </div>
+                <div>
+                  <h6 className="form"></h6><input className="bar" name="password" type="password" placeholder="Password" />
+                </div>
+                <div>
+                  <h6 className="form"></h6><input className="bar" name="password_confirmation" type="password" placeholder="Password Confirmation"/>
+                </div>
+                <br/>
+              </div> 
+              <button className="button" type="submit">Join Now</button>
             </div>  
           </form>
         </div>

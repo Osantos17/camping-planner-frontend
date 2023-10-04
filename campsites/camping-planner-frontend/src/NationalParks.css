@@ -28,18 +28,23 @@ h1 {
 }
 
 .search1 {
-  margin: 40px 0px;
-  font-size: 20px;
+  margin: 0px 0px;
+  font-size: 22px;
 }
 
 .search2 {
-  margin: 40px 0px;
-  font-size: 20px;
+  margin: 0px 0px;
+  font-size: 22px;
+}
+
+.search3 {
+  margin: 0px 0px;
+  font-size: 22px;
 }
 
 .searchbars {
-  margin: 0px 40px;
-  width: 200px;
+  margin: 0px 45px;
+  width: 300px;
 }
 
 .park-name {
@@ -91,3 +96,5 @@ div h5 {
   margin: 5px 40px;
   border-radius: 8px;
 }
+
+.city-name {}

@@ -8,6 +8,7 @@ import { Signup } from "./Signup";
 import "./Header.css"
 import { NationalParks } from "./NationalParks"
 import { LogIn } from "./LogIn"
+import { MyParks } from './MyParks';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/nationalparks" element={<NationalParks />} />
           <Route path="/login" element={<LogIn />} />
+          <Route path="/myparks" element={<MyParks />} />
         </Routes>
         <Footer />
       </BrowserRouter>

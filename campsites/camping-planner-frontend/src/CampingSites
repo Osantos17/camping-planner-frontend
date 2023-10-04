@@ -33,3 +33,90 @@ export function NationalParks () {
     </div>
   )
 }
+
+
+"id":"FB8D1AFA-AD1F-48F1-AFF4-B649857B6D61"
+
+,"url":"https://www.nps.gov/yell/planyourvisit/pebblecreekcg.htm"
+
+,"name":"Pebble Creek Campground"      
+
+,"parkCode":"yell"
+
+,"description":"CLOSED IN 2023 for flood recovery work. Pebble Creek Campground—elevation 6,900 feet (2103 m)—lies against the dramatic backdrop of the Absaroka Mountains near the park's Northeast Entrance and offers a more isolated camping experience. Day hiking opportunities are available nearby. Soda Butte Creek offers fishing opportunities and there are outstanding wildlife viewing opportunities throughout Lamar Valley. This is a reservable campground run by the National Park Service."
+
+,"latitude":
+
+"44.91698134898363" 
+
+,"longitude":
+
+"-110.11380838340915" 
+
+,"latLong":"{lat:44.91698134898363, lng:-110.11380838340915}"
+
+,"audioDescription":""
+
+,"isPassportStampLocation":"0"
+,"passportStampLocationDescription":""
+
+,"passportStampImages":[]
+,"geometryPoiId":"02F61986-3784-4E45-85EE-DD6EF861F711"
+
+,"reservationInfo":"All sites are reservable on Recreation.gov"
+
+,"reservationUrl":"https://www.recreation.gov/camping/campgrounds/259307"
+
+,"regulationsurl":"https://www.nps.gov/yell/planyourvisit/rules.htm"
+
+,"regulationsOverview":"Overnight camping or parking is only allowed in designated campgrounds or campsites. Campsite occupancy is limited to six people per site. Checkout time is 10 am. Camping is limited to 14 days from July 1 through Labor Day, and 30 days for the rest of the year. There is no stay limit at the Fishing Bridge RV Park. Unless posted otherwise, wood and charcoal fires are permitted in all campgrounds except the Fishing Bridge RV Park. Propane grills and stoves are usually unaffected by fire restrictions. All odorous items that may attract bears, including food, cooking gear, toiletries, and garbage, must be kept secured when not in use. Bear-proof storage boxes are available at many campsites. Where permitted, generators may only be operated from 8 am to 8 pm (60 dB limit). Generators are not permitted at Indian Creek, Lewis Lake, Pebble Creek, Slough Creek, or Tower Fall."
+
+,"amenities":{"trashRecyclingCollection":"Yes - seasonal","toilets":["Vault Toilets - seasonal"],"internetConnectivity":"No","showers":["None"],"cellPhoneReception":"No","laundry":"No","amphitheater":"No","dumpStation":"No","campStore":"No","staffOrVolunteerHostOnsite":"Yes - seasonal","potableWater":["Yes - seasonal"],"iceAvailableForSale":"No","firewoodForSale":"No","foodStorageLockers":"Yes - seasonal"}
+,"contacts":{"phoneNumbers":[{"phoneNumber":"3073447381","description":"","extension":"","type":"Voice"},{"phoneNumber":"3073442014","description":"","extension":"","type":"Fax"},{"phoneNumber":"3073442386","description":"","extension":"","type":"TTY"}],"emailAddresses":[{"description":"","emailAddress":"YELL_Information@nps.gov"}]}
+,"fees":[{"cost":"20.00","description":"Interagency Access and Senior Pass holders receive a 50% discount.","title":"Nightly Fee"},{"cost":"10.00","description":"This is the per-person cost for a hiker/bicyclist campsite for one night.","title":"Hiker/bicyclist Nightly Fee"}]
+,"directionsOverview":"Located on the road between Tower Junction and the Northeast Entrance."
+
+,"directionsUrl":"http://www.nps.gov/yell/planyourvisit/campgrounds.htm"
+
+,"operatingHours":[{"exceptions":[],"description":"The campground is typically only open during summer. Checkout time is 10 am. See exceptions for exact dates of operation.","standardHours":{"wednesday":"Closed","monday":"Closed","thursday":"Closed","sunday":"Closed","tuesday":"Closed","friday":"Closed","saturday":"Closed"},"name":"Pebble Creek Campground"}]
+,"addresses":[{"postalCode":"82190","city":"Yellowstone National Park","stateCode":"WY","countryCode":"US","provinceTerritoryCode":"","line1":"GPS Coordinates -- N 44  55.01886 W 110  6.82848","type":"Physical","line3":"","line2":""},{"postalCode":"82190","city":"Yellowstone National Park","stateCode":"WY","countryCode":"US","provinceTerritoryCode":"","line1":"PO Box 168","type":"Mailing","line3":"","line2":""}]
+,"images":[{"credit":"NPS/ Jacob W. Frank","crops":[],"title":"Pebble Creek Campground","altText":"The entrance to the Pebble Creek Campground","caption":"The Pebble Creek Campground offers partially shaded sites on the edge of the Absaroka Mountains.","url":"https://www.nps.gov/common/uploads/structured_data/F44F25C1-1DD8-B71B-0B178676FAE6942E.jpg"},{"credit":"NPS / Neal Herbert","crops":[],"title":"Pebble Creek Campground","altText":"Tent and camper at campsite.","caption":"Pebble Creek campgrund","url":"https://www.nps.gov/common/uploads/structured_data/3C864087-1DD8-B71B-0B0A543810653DF4.jpg"},{"credit":"NPS / Neal Herbert","crops":[],"title":"Pebble Creek Campground","altText":"RV at campsite","caption":"Pebble Creek Campground","url":"https://www.nps.gov/common/uploads/structured_data/3C8642C2-1DD8-B71B-0B0107B52E3146B8.jpg"},{"credit":"NPS / Neal Herbert","crops":[],"title":"Pebble Creek Campground","altText":"Camping trailer at campsite","caption":"Pebble Creek Campground","url":"https://www.nps.gov/common/uploads/structured_data/3C8643D7-1DD8-B71B-0B394152DA329B9B.jpg"},{"credit":"NPS / Neal Herbert","crops":[],"title":"Pebble Creek Campground","altText":"Campsite with stream","caption":"Pebble Creek Campground","url":"https://www.nps.gov/common/uploads/structured_data/3C863DFE-1DD8-B71B-0BE1A996EF3A5AFD.jpg"},{"credit":"NPS / Neal Herbert","crops":[],"title":"Pebble Creek Campground","altText":"Campsites at the Pebble Creek Campground","caption":"Campsites at the Pebble Creek Campground","url":"https://www.nps.gov/common/uploads/structured_data/7F9A4A9D-1DD8-B71B-0B67FCB6F5CE4759.jpg"},{"credit":"NPS / Neal Herbert","crops":[],"title":"Pebble Creek Campground","altText":"Bear proof food storage at the Pebble Creek Campground","caption":"Bear proof food storage at the Pebble Creek Campground","url":"https://www.nps.gov/common/uploads/structured_data/7FA0EF73-1DD8-B71B-0B0974C17E571EBD.jpg"},{"credit":"NPS / Neal Herbert","crops":[],"title":"Pebble Creek Campground","altText":"Food storage box, picnic table, tent at campsite.","caption":"Pebble Creek Campground","url":"https://www.nps.gov/common/uploads/structured_data/3C864814-1DD8-B71B-0BD24EEB5B5E105B.jpg"}]
+,"weatherOverview":"Yellowstone's weather can vary greatly within a day and throughout the park. Snow can fall every month of the year. Summer highs reach 70–80°F (25–30°C) during the day, but nights can be cool (and it may freeze at higher elevations). During spring and fall, daytime highs range from 30–60°F (0–20°C), with overnight lows below freezing."
+
+,"numberOfSitesReservable":"27"
+
+,"numberOfSitesFirstComeFirstServe":"0"
+
+,"campsites":{
+"totalSites":"27",
+"group":"0",
+"horse":"0",
+"tentOnly":"0",
+"electricalHookups":"0",
+"rvOnly":"0",
+"walkBoatTo":"0",
+"other":"0"
+}
+
+,"accessibility":{
+"wheelchairAccess":"The road through the campground is paved. Paths in the campground area are compacted gravel/dirt with limited gradient change.",
+"internetInfo":"",
+"cellPhoneInfo":"",
+"fireStovePolicy":"Wood and charcoal fires are permitted in this campground, though special fire restrictions are occasionally put in place when the danger of wildland fires is great. If you plan to light a fire in the park, please ask about current fire restrictions at the entrance station when you arrive. Propane grills and stoves are normally not restricted.",
+"rvAllowed":"1",
+"rvInfo":"Some long pull-throughs.",
+"rvMaxLength":"0",
+"additionalInfo":"",
+"trailerMaxLength":"0",
+"adaInfo":"There is one accessible campsite at the Pebble Creek Campground.",
+"trailerAllowed":"1",
+"accessRoads":[
+  "Paved Roads - All vehicles OK"
+  ],
+"classifications":[
+  "Developed Campground"
+  ]
+}
+
+,"multimedia":[]
+,"lastIndexedDate":""
