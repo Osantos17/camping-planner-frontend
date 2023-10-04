@@ -11,8 +11,6 @@ export function Content() {
   const [currentPost, setCurrentPost] = useState(false);
 
   const handleIndexPosts = () => {
-    console.log('helloooooo');
-
     axios.get('http://localhost:3000/posts.json').then((response) => {
       console.log(response.data);
       setPosts(response.data);

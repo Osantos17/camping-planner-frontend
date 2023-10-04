@@ -1,9 +1,19 @@
+import { useState } from "react"
+
 export function IndexPosts(props) {
-  console.log(props.posts);
+  const [searchFilter, setSearchFilter] = useState("")
+
   return (
     <div id="posts-index">
       <h1>All Posts</h1>
-      {props.posts.map((post) => (
+      <input type="text" value={searchFilter} onChange={event => setSearchFilter(event.target.value)} list="names"/>
+      <datalist id ="names">
+        {props.posts.map(post => (
+          <option>{post.title}</option>
+        ))}
+        
+      </datalist>
+      {props.posts.filter(post => post.title.toLowerCase().includes(searchFilter.toLowerCase())).map((post) => (
         <div key={post.id} className="posts">
           <h2>{post.title}</h2>
           <img src={post.image_url} alt="" />

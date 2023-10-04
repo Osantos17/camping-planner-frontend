@@ -28,7 +28,7 @@ function square() {
   return example();
 }
 
-console.log(square(2, 4, 7.55, 16, 11.5, 21)); // returns: [4, 16, 56.25, 64, 132.25, 441]
+console.log(square(2, 4, 8.55, 16, 11.5, 21)); // returns: [4, 16, 56.25, 64, 132.25, 441]
 
 // Interpolate variable bindings
 var name = "Bob", time = "today";
@@ -43,3 +43,5 @@ var bob = {
       console.log(this._name + " knows " + f));
   }
 };
+
+
