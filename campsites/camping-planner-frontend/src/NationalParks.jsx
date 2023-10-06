@@ -7,69 +7,72 @@ export function NationalParks() {
   const [searchFilter, setSearchFilter] = useState('');
   const [totalCampsitesFilter, setTotalCampsitesFilter] = useState('');
   const [cityFilter, setCityFilter] = useState('');
+  const [parks, setParks] = useState([]);
 
   const getParkData = () => {
     axios
       .get('http://localhost:3000/parks.json')
       .then((response) => {
         console.log(response.data); 
-        setCampings(response.data.data); 
+        setCampings(response.data); 
       })
-      .catch((error) => {
-        console.error('Error fetching data:', error);
-      });
   };
 
   useEffect(getParkData, []);
 
-  // const addMyPark = () => {
-  //   console.log('click');
-  //   propTypes.
-  // }
+  const handleCreatePark = (id) => {
+    if (id !== 0) {
+      axios.post(`http://localhost:3000/parks_lists/${id}.json`).then(response => {
+        console.log(response.data);
+        setParks([...parks, response.data]);
+      });
+    }
+  };
 
   return (
     <div className="parksindex-page">
       <div className="parksindex">
-        <h1>National Parks</h1>
-        <div className="searchbars">
-          <span className="search1">
-            Search by Name:<br />
-            <input type="text" value={searchFilter} placeholder="Yosemite..." onChange={event => setSearchFilter(event.target.value)} />
-          </span>
-          <br />
-          <span className="search3">
-            Search by City:<br />
-            <input type="text" placeholder="City..." value={cityFilter} onChange={event => setCityFilter(event.target.value)} />
-          </span>
-          <br />
-          <span className="search2">
-            Search by Provided Campsites:<br />
-            <input type="number" placeholder="5..." value={totalCampsitesFilter} onChange={event => setTotalCampsitesFilter(event.target.value)} />
-          </span>
-        </div>
+        <h1 className="nationalp">NATIONAL PARKS</h1>
+        <div className='searchbars'>
+          <div className="container text-center">
+            <div className="row justify-content-evenly">
+              <span className="col-4">
+                <input className="searchfield" type="text" value={searchFilter} placeholder="Search by Name.." onChange={event => setSearchFilter(event.target.value)} />
+              </span>
+              <br />
+              <span className="col-4">
+                <input className="searchfield" type="text" placeholder="Search by City.." value={cityFilter} onChange={event => setCityFilter(event.target.value)} />
+              </span>
+              <br />
+              <span className="col-4">
+                <input className="searchfield" type="number" placeholder="Search by Campsites Provided.." value={totalCampsitesFilter} onChange={event => setTotalCampsitesFilter(event.target.value)} />
+              </span>
+            </div>
+          </div> 
+        </div>   
         <div className="summary">
           {campings
             .filter(park => (
               park.name.toLowerCase().includes(searchFilter.toLowerCase()) &&
-              (cityFilter === "" || (park.addresses[0] && park.addresses[0].city && park.addresses[0].city.toLowerCase().includes(cityFilter.toLowerCase()))) &&
-              park.campsites.totalSites >= totalCampsitesFilter
+              (cityFilter === "" || (park && park.city && park.city.toLowerCase().includes(cityFilter.toLowerCase()))) &&
+              park.totalsites >= totalCampsitesFilter
             ))
             .map((park) => (
               <div className="parksummary" key={park.id}>
                 <div>
                   <span>
                     <h2 className="park-name">{park.name.toUpperCase()}</h2>
-                    {park.addresses && park.addresses.length > 0 && (
-                      <h2 className="city-name">{park.addresses[0].city.toUpperCase()}</h2>
+                    {park.city && park.city.length > 1 && (
+                      <h2 className="city-name">{park.city.toUpperCase()}</h2>
                     )}
                   </span>
                   <div className="parkinfo-background">
                     <div className="row">
                       <div className="col">
                         <div className='campsites'>
-                          <span><h6>Total Campsites</h6>{park.campsites.totalSites}</span>
-                          <span><h6>First Come First Serve</h6>{park.numberOfSitesFirstComeFirstServe}</span>
-                          <span><h6>Reservable</h6>{park.numberOfSitesReservable}</span>
+                          <span><h6>Total Campsites</h6>{park.totalsites}</span>
+                          <span><h6>First Come First Serve</h6>{park.firstcome}</span>
+                          <span><h6>Reservable</h6>{park.reservable}</span>
                         </div>
                       </div>
                       <div className="col">
@@ -80,9 +83,9 @@ export function NationalParks() {
                               <p>Entry Fee - {park.fees[0].cost}</p>
                             </div>
                           )}
-                          <p>Showers - {park.amenities.showers[0]}</p>
-                          <p>Toilets - {park.amenities.toilets[0]}</p>
-                          <p>Phone Reception - {park.amenities.cellPhoneReception}</p>
+                          <p>Showers - {park.showers}</p>
+                          <p>Toilets - {park.toilets}</p>
+                          <p>Phone Reception - {park.cellPhoneReception}</p>
                           <a href={park.url}>{park.url}</a>
                         </div>
                       </div>
@@ -94,7 +97,7 @@ export function NationalParks() {
                     </div>
                   </div>
                 </div>
-                <button className="button2" type="button" onClick={() => addToMyList(park.id)}>Add to my List</button>
+                <button className="button2" type="button" onClick={() => handleCreatePark(park.id)}>Add to my List</button>
               </div>
             ))}
         </div>

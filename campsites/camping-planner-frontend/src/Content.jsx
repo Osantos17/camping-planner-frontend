@@ -37,6 +37,8 @@ export function Content() {
       <div className="content">
         <div className="title">
           <h1>NATIONAL PARKS</h1>
+          {/* <p>Latitude: {coordinates.latitude}</p>
+          <p>Longitude: {coordinates.longitude}</p> */}
           <div className="row">
             <h1 className='col'>CAMP REVIEWS</h1>
             <div className="col-2">
