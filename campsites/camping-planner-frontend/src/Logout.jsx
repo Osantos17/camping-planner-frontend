@@ -1,6 +1,7 @@
 import axios from "axios";
+import "./Logout"
 
-export function LogoutLink() {
+export function Logout() {
   const handleClick = (event) => {
     event.preventDefault();
     delete axios.defaults.headers.common["Authorization"];

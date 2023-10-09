@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import './Content.css';
 
 
+
 export function Content() {
   const [coordinates, setCoordinates] = useState(null);
 

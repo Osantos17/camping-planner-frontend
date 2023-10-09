@@ -1,5 +1,7 @@
 .navbar {
   background-color: rgba(0, 0, 0, 0.7);
+  text-decoration: none;
+  color: white;
 }
 
 .navtext {
@@ -9,10 +11,26 @@
 
 }
 
+.noline {
+  border: none;
+  font-size: 20px;
+  color: white;
+}
+
 .signinblock {
-  margin-right: 40px;
+  margin-right: 60px;
+  width: 700px;
 }
 
 .loginbutton {
   border: none;
+  width: 120px;
+}
+
+.navtext:hover {
+  color: rgb(63, 126, 236);
+}
+
+.navtext:active {
+  transform: translateY(5px);
 }

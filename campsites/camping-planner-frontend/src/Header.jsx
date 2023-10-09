@@ -22,12 +22,20 @@ export function Header() {
         axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.jwt;
         localStorage.setItem("jwt", response.data.jwt);
         event.target.reset();
-        window.location.href = "/"; // Change this to hide a modal, redirect to a specific page, etc.
+        window.location.href = "/"; 
       })
       .catch((error) => {
         console.log(error.response);
         setErrors(["Invalid email or password"]);
       });
+  };
+
+
+  const handleClick = (event) => {
+    event.preventDefault();
+    delete axios.defaults.headers.common["Authorization"];
+    localStorage.removeItem("jwt");
+    window.location.href = "/";
   };
 
 
@@ -65,6 +73,13 @@ export function Header() {
                   </div >
                   <div className="col">
                     <button className="loginbutton" type="submit"><h3 className="navtext">SIGN IN</h3></button>
+                  </div>
+                  <div className="col">
+                    <div className="logout">
+                      <button className="noline" href="#" type="submit" onClick={handleClick}>
+                        <h3 className="navtext">LOGOUT</h3>
+                      </button>
+                    </div>  
                   </div>
                 </div>
               </div>    
