@@ -6,9 +6,7 @@ import "./App.css";
 import { Signup } from "./Signup";
 import "./Header.css"
 import { NationalParks } from "./NationalParks"
-import { LogIn } from "./LogIn"
 import { MyParks } from './MyParks';
-import { RadarMap } from './RadarMap'
 
 function App() {
   return (
@@ -19,9 +17,7 @@ function App() {
           <Route path="/" element={<Content />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/nationalparks" element={<NationalParks />} />
-          <Route path="/login" element={<LogIn />} />
           <Route path="/myparks" element={<MyParks />} />
-          <Route path="/maps" element={<RadarMap />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -32,22 +32,6 @@ h1 {
   padding-top: 40px;
 }
 
-/* .search1 {
-  margin: 0px 0px;
-  font-size: 22px;
-}
-
-.search2 {
-  margin: 0px 0px;
-  font-size: 22px;
-}
-
-.search3 {
-  margin: 0px 0px;
-  font-size: 22px;
-} */
-
-
 .searchbars {
   margin: 20px 330px;
 }
@@ -107,5 +91,3 @@ div h5 {
   margin: 5px 40px;
   border-radius: 8px;
 }
-
-.city-name {}

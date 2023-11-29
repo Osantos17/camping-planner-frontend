@@ -14,16 +14,18 @@ export function MyParks () {
 
   const getMyParks = () => {
     axios.get('http://localhost:3000/parks_lists.json').then((response) => {
-        console.log(response.data); 
-        setMyParks(response.data); 
-      })
+      console.log(response.data); 
+      setMyParks(response.data); 
+    })
+    .catch((error) => {
+      console.error('Error fetching data from the server:', error);
+    });
   };
 
   const destroyPark = (id) => {
     axios.delete(`http://localhost:3000/parks_lists/${id}.json`).then(response => {
       console.log(response.data);
       setDestroyParks([...destoryParks, response.data])
-
     })
   }
 
@@ -52,7 +54,7 @@ export function MyParks () {
   
     axios.get(apiUrl, {
       headers: {
-        Authorization: 'prj_live_pk_de82543ab49a7a7b86fc1d55c635cf2af48357e3',
+        Authorization: `${import.meta.env.VITE_SOME_KEY}`,
       },
     }).then((response) => {
       
@@ -62,43 +64,43 @@ export function MyParks () {
   };
   
 
-useEffect(() => {
-  if (coordinates) {
-    Radar.initialize('prj_live_pk_de82543ab49a7a7b86fc1d55c635cf2af48357e3');
+  useEffect(() => {
+    if (coordinates) {
+      Radar.initialize(`${import.meta.env.VITE_SOME_KEY}`);
 
-    const map = new Radar.ui.map({
-      container: 'map',
-      style: 'radar-light-v1',
-      center: [coordinates.longitude, coordinates.latitude],
-      zoom: 4,
-    });
-
-    Radar.ui.marker({ text: "Home" }) 
-      .setLngLat([coordinates.longitude, coordinates.latitude])
-      .addTo(map);
-
-      const markers = [];
-
-    myParks.forEach((park) => {
-      markers.push({
-        name: (park.name), 
-        lngLat: [park.longitude, park.latitude],
+      const map = new Radar.ui.map({
+        container: 'map',
+        style: 'radar-light-v1',
+        center: [coordinates.longitude, coordinates.latitude],
+        zoom: 4,
       });
-    });
 
-    markers.forEach((marker) => {
-      Radar.ui.marker({ text: marker.name})
-        .setLngLat(marker.lngLat)
+      Radar.ui.marker({ text: "Home" }) 
+        .setLngLat([coordinates.longitude, coordinates.latitude])
         .addTo(map);
-    });
-  }
-}, [coordinates, myParks]);
 
-const Content = styled.div`
-  height: 74vh;
-  width: 100%;
-  overflow-y: scroll;
-`;
+        const markers = [];
+
+      myParks.forEach((park) => {
+        markers.push({
+          name: (park.name), 
+          lngLat: [park.longitude, park.latitude],
+        });
+      });
+
+      markers.forEach((marker) => {
+        Radar.ui.marker({ text: marker.name})
+          .setLngLat(marker.lngLat)
+          .addTo(map);
+      });
+    }
+  }, [coordinates, myParks]);
+
+  const Content = styled.div`
+    height: 74vh;
+    width: 100%;
+    overflow-y: scroll;
+  `;
 
   return(
     <div className="myparks-page">
