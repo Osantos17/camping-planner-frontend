@@ -13,8 +13,8 @@ function App() {
     <div className="body">
       <BrowserRouter>
         <Header />
+        <Content />
         <Routes>
-          <Route path="/" element={<Content />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/nationalparks" element={<NationalParks />} />
           <Route path="/myparks" element={<MyParks />} />
