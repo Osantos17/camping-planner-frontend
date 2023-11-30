@@ -2,7 +2,6 @@ import { Header } from "./Header";
 import { Content } from "./Content";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "./App.css";
 import { Signup } from "./Signup";
 import "./Header.css"
 import { NationalParks } from "./NationalParks"
